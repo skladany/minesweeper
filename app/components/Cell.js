@@ -9,7 +9,9 @@ class Cell extends React.Component {
 			message: 'No mine'
 		}
 
-		this.handleClick  = this.handleClick.bind(this);
+		//console.log(props);
+
+		//this.handleClick  = this.handleClick.bind(this);
 
 		let message = '';
 	}
@@ -21,16 +23,19 @@ class Cell extends React.Component {
 			}
 		})
 	}	
-	handleClick() {
-		this.setState( () => {
-			mine: !this.state.mine
-		})
-		console.log("clicked");
-	}
+	// handleClick() {
+	// 	this.setState( function() {
+	// 		return {
+	// 			mine: !this.state.mine,
+	// 			message: 'clicked'
+	// 		}
+	// 	})
+	// 	console.log("clicked", this.state);
+	// }
 	render() {
 		return (
 			<div>
-				<button onClick={this.handleClick}>{this.state.message}</button>
+				<button onClick={this.props.handleClick}>{this.state.message}</button>
 			</div>
 		)
 	}

@@ -25,7 +25,8 @@ class Gameboard extends React.Component {
 		console.log(board.spots);
 	}	
 	handleClick() {
-		console.log("this was clicked");
+
+		console.log("this was clicked", this.state.mine);
 	}
 	render() {
 		return (
@@ -35,7 +36,7 @@ class Gameboard extends React.Component {
 				<div className="board-wrapper">
 					<button onClick={this.handleClick}>Button</button>
 					{Array.prototype.map.call(this.state.spots, (elem, i) => {
-						return (<Cell key={i} mine={elem.mine} onClick={this.handleClick} />)
+						return (<Cell key={i} mine={elem.mine} handleClick={this.handleClick} />)
 					})}
 				</div>
 			</div>
