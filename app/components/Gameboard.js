@@ -1,5 +1,6 @@
 import { Board } from '../game/board.js'
 const React = require('react');
+const Cell  = require('./Cell');
 
 class Gameboard extends React.Component {
 	constructor(props) {
@@ -9,6 +10,8 @@ class Gameboard extends React.Component {
 			spots: '',
 			lost: ''
 		}
+
+		this.handleClick  = this.handleClick.bind(this);
 	}
 	componentDidMount() {
 		let board = new Board();
@@ -20,18 +23,20 @@ class Gameboard extends React.Component {
 			}
 		})
 		console.log(board.spots);
-		
 	}	
+	handleClick() {
+		console.log("this was clicked");
+	}
 	render() {
-		let cells = Array.prototype.map.call(this.state.spots, (elem, i) => {
-			return (<li key={i}>{elem.mine===true ? 'MINE' : 'clear'}</li>)
-		}) ;
 		return (
 			<div>
 				<h1>Minesweeper</h1>
 
 				<div className="board-wrapper">
-					{cells}
+					<button onClick={this.handleClick}>Button</button>
+					{Array.prototype.map.call(this.state.spots, (elem, i) => {
+						return (<Cell key={i} mine={elem.mine} onClick={this.handleClick} />)
+					})}
 				</div>
 			</div>
 		)
