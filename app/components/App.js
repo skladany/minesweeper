@@ -1,5 +1,5 @@
-var React = require('react');
-var Gameboard = require('./Gameboard');
+const React = require('react');
+const Gameboard = require('./Gameboard');
 
 
 class App extends React.Component {
