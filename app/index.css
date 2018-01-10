@@ -6,3 +6,16 @@
 /*	display: flex;*/
 }
 
+.col {
+	float: left;
+	border: 1px solid blue;
+	display: flex;
+	flex-direction: column;
+	width: 3.33%;
+}
+
+.button {
+	border: 1px solid red;
+	border-radius: none;
+}
+

@@ -1,5 +1,6 @@
 import { Board } from '../game/board.js'
 import React from 'react';
+import Col  from './Col';
 import Cell from './Cell';
 
 class Gameboard extends React.Component {
@@ -50,13 +51,17 @@ class Gameboard extends React.Component {
 				<Cell key={i} spot={i} mine={elem.mine} handleClick={this.handleClick} />
 			)
 		})
+		let columns = [];
+		for (var i = 0; i <= 450; i=i+15) {
+		    columns.push(<Col>{cells.slice(i-15,i)}</Col>);
+		}
 
 		return (
 			<div>
 				<h1>Minesweeper</h1>
 
 				<div className="board">
-					{cells}
+					{columns}					
 				</div>
 			</div>
 		)
