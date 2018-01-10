@@ -39,9 +39,7 @@ class Cell extends React.Component {
 		let message = this.props.mine===true ? 'MINE' : 'clear';
 
 		return (
-			<div>
-				<button onClick={this.props.handleClick} spot={this.props.spot}>{message}</button>
-			</div>
+			<button onClick={this.props.handleClick} spot={this.props.spot}>{message}</button>
 		)
 	}
 }

@@ -16,7 +16,6 @@ class Gameboard extends React.Component {
 	componentDidMount() {
 		let board = new Board();
 
-		//console.log( board );
 		this.setState( () => {
 			return {
 				spots: board.spots
@@ -46,14 +45,23 @@ class Gameboard extends React.Component {
 		console.log(updatedSpots);
 	}
 	render() {
+		let cells = Array.prototype.map.call(this.state.spots, (elem, i) => {
+			return (
+				<Cell key={i} spot={i} mine={elem.mine} handleClick={this.handleClick} />
+			)
+		})
+
 		return (
 			<div>
 				<h1>Minesweeper</h1>
 
-				<div className="board-wrapper">
-					<button onClick={this.handleClick}>Button</button>
-					{Array.prototype.map.call(this.state.spots, (elem, i) => {
-						return (<Cell key={i} spot={i} mine={elem.mine} handleClick={this.handleClick} />)
+				<div className="board">
+					{cells.map( (elem, i) => {
+						if (i%30) {
+							return (
+								<div>elem
+							)
+						}
 					})}
 				</div>
 			</div>
