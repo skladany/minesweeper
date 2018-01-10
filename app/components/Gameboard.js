@@ -1,6 +1,6 @@
 import { Board } from '../game/board.js'
-const React = require('react');
-const Cell  = require('./Cell');
+import React from 'react';
+import Cell from './Cell';
 
 class Gameboard extends React.Component {
 	constructor(props) {
@@ -56,17 +56,11 @@ class Gameboard extends React.Component {
 				<h1>Minesweeper</h1>
 
 				<div className="board">
-					{cells.map( (elem, i) => {
-						if (i%30) {
-							return (
-								<div>elem
-							)
-						}
-					})}
+					{cells}
 				</div>
 			</div>
 		)
 	}
 }
 
-module.exports = Gameboard;
+export default Gameboard;

@@ -1,6 +1,5 @@
-const React = require('react');
-const Gameboard = require('./Gameboard');
-
+import React from 'react';
+import Gameboard from './Gameboard';
 
 class App extends React.Component {
   render() {
@@ -10,4 +9,4 @@ class App extends React.Component {
   }
 }
 
-module.exports = App;
+export default App;
