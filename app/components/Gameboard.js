@@ -12,19 +12,26 @@ class Gameboard extends React.Component {
 			lost: ''
 		}
 
+		// let board = new Board();
+		// console.log( board );
+		//this.board = this.props;
+
 		this.handleClick  = this.handleClick.bind(this);
+		
 	}
 	componentDidMount() {
+		
 		let board = new Board();
-
 		this.setState( () => {
 			return {
 				spots: board.spots
 			}
 		})
-		console.log(board.spots);
+
+
 	}	
 	handleClick(event) {
+		
 
 		let spot = event.target.getAttribute("spot");
 
@@ -43,7 +50,7 @@ class Gameboard extends React.Component {
 			}
 		})
 
-		console.log(updatedSpots);
+		//console.log(updatedSpots);
 	}
 	render() {
 		let cells = Array.prototype.map.call(this.state.spots, (elem, i) => {
