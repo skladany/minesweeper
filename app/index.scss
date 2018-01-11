@@ -1,0 +1,50 @@
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+html {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.board {
+	@include clearfix;
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;	
+}
+
+.col {
+	float: left;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+
+}
+
+.cell {
+	display: flex;
+	width: 2vw;
+	height: 2vw;
+	min-width: 20px;
+	min-height: 20px;
+	border: 2px solid black;
+	cursor: pointer;
+	text-align: center;
+	line-height: 20px;
+	align-items: center;
+	justify-content: center;	
+}
+
+.button {
+	border: 1px solid red;
+	border-radius: none;
+}
+

@@ -52,8 +52,8 @@ class Gameboard extends React.Component {
 			)
 		})
 		let columns = [];
-		for (var i = 0; i <= 450; i=i+15) {
-		    columns.push(<Col>{cells.slice(i-15,i)}</Col>);
+		for (var i = 0; i < 450; i=i+15) {
+		    columns.push(<Col>{cells.slice(i,i+15)}</Col>);
 		}
 
 		return (
