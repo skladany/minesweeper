@@ -7,13 +7,16 @@ class Gameboard extends React.Component {
 	constructor(props) {
 		super(props);
 
+		let board = new Board();
+
 		this.state = {
-			spots: '',
-			lost: ''
+			spots: board.spots,
+			lost: '',
+			clearSpot: board.clearSpot
 		}
 
-		// let board = new Board();
-		// console.log( board );
+		// 
+		console.log( board.clearSpot );
 		//this.board = this.props;
 
 		this.handleClick  = this.handleClick.bind(this);
@@ -21,12 +24,12 @@ class Gameboard extends React.Component {
 	}
 	componentDidMount() {
 		
-		let board = new Board();
-		this.setState( () => {
-			return {
-				spots: board.spots
-			}
-		})
+		//let board = new Board();
+		// this.setState( () => {
+		// 	return {
+		// 		spots: this.state.board.spots
+		// 	}
+		// })
 
 
 	}	
@@ -44,13 +47,15 @@ class Gameboard extends React.Component {
 			mine: mine
 		}
 
+		this.state.clearSpot(2);
+
 		this.setState( () => {
 			return {
 				spots: updatedSpots
 			}
 		})
 
-		//console.log(updatedSpots);
+		console.log(this.state.board);
 	}
 	render() {
 		let cells = Array.prototype.map.call(this.state.spots, (elem, i) => {
